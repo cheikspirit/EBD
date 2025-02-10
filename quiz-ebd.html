@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz do Professor da EBD ICEPA</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    .quiz-container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .question {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+    .question label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .question input {
+      margin-right: 10px;
+    }
+    button {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="quiz-container">
+    <h1>Quiz: Autoexame do Professor da EBD</h1>
+    <p>Responda às perguntas abaixo com <strong>Sim</strong> ou <strong>Não</strong> e veja seu resultado no final!</p>
+
+    <div class="question">
+      <label>1. Você se prepara espiritualmente (oração e leitura da Bíblia) antes de ministrar a aula?</label>
+      <input type="radio" name="q1" value="1"> Sim
+      <input type="radio" name="q1" value="0"> Não
+    </div>
+
+    <div class="question">
+      <label>2. Você busca conhecer as necessidades e realidades dos seus alunos para adaptar o ensino?</label>
+      <input type="radio" name="q2" value="1"> Sim
+      <input type="radio" name="q2" value="0"> Não
+    </div>
+
+    <div class="question">
+      <label>3. Você chega na EBD com antecedência para receber os alunos e organizar o ambiente?</label>
+      <input type="radio" name="q3" value="1"> Sim
+      <input type="radio" name="q3" value="0"> Não
+    </div>
+
+    <div class="question">
+      <label>4. Você utiliza métodos criativos e dinâmicos para prender a atenção dos alunos?</label>
+      <input type="radio" name="q4" value="1"> Sim
+      <input type="radio" name="q4" value="0"> Não
+    </div>
+
+    <div class="question">
+      <label>5. Você se preocupa em aplicar os ensinamentos bíblicos à vida prática dos alunos?</label>
+      <input type="radio" name="q5" value="1"> Sim
+      <input type="radio" name="q5" value="0"> Não
+    </div>
+
+    <div class="question">
+      <label>6. Você busca feedback dos alunos ou colegas para melhorar suas aulas?</label>
+      <input type="radio" name="q6" value="1"> Sim
+      <input type="radio" name="q6" value="0"> Não
+    </div>
+
+    <div class="question">
+      <label>7. Você mantém uma postura de humildade e disposição para aprender, mesmo sendo o professor?</label>
+      <input type="radio" name="q7" value="1"> Sim
+      <input type="radio" name="q7" value="0"> Não
+    </div>
+
+    <div class="question">
+      <label>8. Você ora pelos seus alunos e pelo crescimento espiritual deles fora da EBD?</label>
+      <input type="radio" name="q8" value="1"> Sim
+      <input type="radio" name="q8" value="0"> Não
+    </div>
+
+    <button onclick="calcularResultado()">Ver Resultado</button>
+
+    <div class="result" id="resultado"></div>
+  </div>
+
+  <script>
+    function calcularResultado() {
+      const respostas = document.querySelectorAll('input[type="radio"]:checked');
+      let pontuacao = 0;
+
+      respostas.forEach(resposta => {
+        pontuacao += parseInt(resposta.value);
+      });
+
+      let mensagem = "";
+      if (pontuacao >= 0 && pontuacao <= 2) {
+        mensagem = "Precisa de Ajustes: Sua prática como professor da EBD pode estar precisando de mais atenção e dedicação. Reflita sobre suas motivações e busque se preparar melhor, tanto espiritualmente quanto pedagogicamente.";
+      } else if (pontuacao >= 3 && pontuacao <= 5) {
+        mensagem = "No Caminho Certo, Mas Pode Melhorar: Você já tem boas práticas, mas ainda há espaço para crescimento. Identifique as áreas em que marcou 'Não' e trabalhe nelas.";
+      } else if (pontuacao >= 6 && pontuacao <= 8) {
+        mensagem = "Excelente Professor da EBD! Parabéns! Você demonstra dedicação, preparo e amor pelo ensino da Palavra de Deus. Continue assim!";
+      } else {
+        mensagem = "Por favor, responda todas as perguntas.";
+      }
+
+      document.getElementById("resultado").innerText = `Sua pontuação: ${pontuacao}/8\n${mensagem}`;
+    }
+  </script>
+</body>
+</html>
