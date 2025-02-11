@@ -57,7 +57,7 @@
 </head>
 <body>
   <div class="quiz-container">
-    <h1>Quiz: Autoavaliação do Professor</h1>
+    <h1>Quiz do Professor</h1>
     <p>Responda às perguntas abaixo com <strong>Sim</strong> ou <strong>Não</strong> e veja seu resultado no final!</p>
 
     <div class="question">
@@ -73,7 +73,7 @@
     </div>
 
     <div class="question">
-      <label>3. Você chega na EBD com antecedência para receber os alunos e organizar o ambiente?</label>
+      <label>3. Você chega na salinha com antecedência para receber os alunos e organizar o ambiente?</label>
       <input type="radio" name="q3" value="1"> Sim
       <input type="radio" name="q3" value="0"> Não
     </div>
@@ -91,7 +91,7 @@
     </div>
 
     <div class="question">
-      <label>6. Você busca feedback dos alunos ou colegas para melhorar suas aulas?</label>
+      <label>6. Você busca feedback dos alunos ou irmãos para melhorar suas aulas?</label>
       <input type="radio" name="q6" value="1"> Sim
       <input type="radio" name="q6" value="0"> Não
     </div>
@@ -103,7 +103,7 @@
     </div>
 
     <div class="question">
-      <label>8. Você ora pelos seus alunos e pelo crescimento espiritual deles fora da EBD?</label>
+      <label>8. Você ora pelos seus alunos e pelo crescimento espiritual deles fora da salinha?</label>
       <input type="radio" name="q8" value="1"> Sim
       <input type="radio" name="q8" value="0"> Não
     </div>
@@ -124,7 +124,7 @@
 
       let mensagem = "";
       if (pontuacao >= 0 && pontuacao <= 2) {
-        mensagem = "Precisa de Ajustes: Sua prática como professor da EBD pode estar precisando de mais atenção e dedicação. Reflita sobre suas motivações e busque se preparar melhor, tanto espiritualmente quanto pedagogicamente.";
+        mensagem = "Precisa de Ajustes: Sua prática como professor pode estar precisando de mais atenção e dedicação. Reflita sobre suas motivações e busque se preparar melhor, tanto espiritualmente quanto pedagogicamente.";
       } else if (pontuacao >= 3 && pontuacao <= 5) {
         mensagem = "No caminho certo, mas pode melhorar: Você já tem boas práticas, mas ainda há espaço para crescimento. Identifique as áreas em que marcou 'Não' e trabalhe nelas.";
       } else if (pontuacao >= 6 && pontuacao <= 8) {
